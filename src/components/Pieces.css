@@ -1,0 +1,37 @@
+.icon {
+    /* font-size: 80px; */
+    font-size: calc(100% / 8);
+    text-align: center;
+    cursor: pointer;
+}
+
+@media  screen and (max-width: 560px) {
+    .icon {
+        font-size: var(--sizeMobile);
+    }
+}
+@media  screen and (min-width: 561px) and (max-width: 680px) {
+    .icon {
+        font-size: var(--sizeTablet);
+    }
+}
+@media  screen and (min-width: 681px) and (max-width: 800px) {
+    .icon {
+        font-size: var(--sizeDesktop);
+    }
+}
+@media  screen and (min-width: 801px) {
+    .icon {
+        font-size: var(--sizeLarge);
+    }
+}
+
+.light {
+    color: #fff;
+    text-shadow: 0px 0px 4px #000;
+}
+
+.dark {
+    color: #000;
+    text-shadow: 0px 0px 4px #fff;
+}

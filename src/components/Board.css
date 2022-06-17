@@ -1,0 +1,76 @@
+:root {
+    --sizeMobile: 40px;
+    --sizeTablet: 64px;
+    --sizeDesktop: 80px;
+    --sizeLarge: 96px;
+}
+
+.wrapper {
+    margin-bottom: 20px;
+}
+
+.chessboard {
+    display: grid;
+    grid-gap: 0px;
+    background-color: #fff;
+    border: 10px solid #fff;
+    background-image: linear-gradient(45deg, #333 25%, transparent 25%),
+                      linear-gradient(-45deg, #333 25%, transparent 25%),
+                      linear-gradient(45deg, transparent 75%, #333 75%),
+                      linear-gradient(-45deg, transparent 75%, #333 75%);
+}
+
+.chessboard__field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media  screen and (max-width: 560px) {
+    .chessboard {
+        grid-template-columns: repeat(8, var(--sizeMobile));
+        background-size: calc(var(--sizeMobile) * 2) calc(var(--sizeMobile) * 2);
+        background-position: 0 0, 0 var(--sizeMobile), var(--sizeMobile) calc(var(--sizeMobile) * -1), calc(var(--sizeMobile) * -1) 0px;
+    }
+    .chessboard__field {
+        width: var(--sizeMobile);
+        height: var(--sizeMobile);
+    }
+}
+
+@media  screen and (min-width: 561px) and (max-width: 680px) {
+    .chessboard {
+        grid-template-columns: repeat(8, var(--sizeTablet));
+        background-size: calc(var(--sizeTablet) * 2) calc(var(--sizeTablet) * 2);
+        background-position: 0 0, 0 var(--sizeTablet), var(--sizeTablet) calc(var(--sizeTablet) * -1), calc(var(--sizeTablet) * -1) 0px;
+    }
+    .chessboard__field {
+        width: var(--sizeTablet);
+        height: var(--sizeTablet);
+    }
+}
+
+@media  screen and (min-width: 681px) and (max-width: 800px) {
+    .chessboard {
+        grid-template-columns: repeat(8, var(--sizeDesktop));
+        background-size: calc(var(--sizeDesktop) * 2) calc(var(--sizeDesktop) * 2);
+        background-position: 0 0, 0 var(--sizeDesktop), var(--sizeDesktop) calc(var(--sizeDesktop) * -1), calc(var(--sizeDesktop) * -1) 0px;
+    }
+    .chessboard__field {
+        width: var(--sizeDesktop);
+        height: var(--sizeDesktop);
+    }
+}
+
+@media  screen and (min-width: 801px) {
+    .chessboard {
+        grid-template-columns: repeat(8, var(--sizeLarge));
+        background-size: calc(var(--sizeLarge) * 2) calc(var(--sizeLarge) * 2);
+        background-position: 0 0, 0 var(--sizeLarge), var(--sizeLarge) calc(var(--sizeLarge) * -1), calc(var(--sizeLarge) * -1) 0px;
+    }
+    .chessboard__field {
+        width: var(--sizeLarge);
+        height: var(--sizeLarge);
+    }
+}
